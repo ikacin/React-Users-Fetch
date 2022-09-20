@@ -2,21 +2,25 @@ import React, {useEffect, useState} from "react";
 
 function Users (){
     const[users,setUsers] = useState([]);
+    const[loading,setLoading] = useState(true);
 
     useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/users")
+        fetch("https://jsonplaceholder.typicode.com/users/")
             .then((res) => res.json())
             .then((data) => setUsers(data))
+            .finally(() => setLoading(false))
     },[])
 
     return(
             <div>
                 <h2>USERS</h2>
-
+                {
+                    loading && <div>Yükleniyor...</div>
+                }
                 <ul>
                     {
                         users.map((user)=> (
-                            <li>{user.username}</li>
+                            <li key={user.id}>{user.username}</li>
                         ))
                     }
                 </ul>

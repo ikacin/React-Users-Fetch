@@ -6,6 +6,7 @@ import Fade from '@mui/material/Fade';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 
+
 const style = {
     position: 'absolute',
     top: '50%',
