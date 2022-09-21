@@ -1,8 +1,13 @@
 import React, {useEffect, useState} from "react";
+import Popover from './Popover';
+
 
 function Users (){
     const[users,setUsers] = useState([]);
     const[loading,setLoading] = useState(true);
+    const[info,setInfo] = useState([]);
+
+
 
     useEffect(() => {
         fetch("https://jsonplaceholder.typicode.com/users/")
@@ -10,6 +15,13 @@ function Users (){
             .then((data) => setUsers(data))
             .finally(() => setLoading(false))
     },[])
+
+    const getId = (id) => {
+        let url = `https://jsonplaceholder.typicode.com/users/${id}`;
+        fetch(url).then((response) => response.json())
+            .then((result) => setInfo(result))
+
+    }
 
     return(
             <div>
@@ -20,7 +32,13 @@ function Users (){
                 <ul>
                     {
                         users.map((user)=> (
-                            <li key={user.id}>{user.username}</li>
+                            <li onClick={()=> getId(user.id)} >{user.username}
+                                {
+                                    <Popover index = {info.email}/>
+
+                                }
+
+                            </li>
                         ))
                     }
                 </ul>
