@@ -4,6 +4,8 @@ import Users from './Users';
 import Modal from './Modal';
 import './custom.css';
 import Popover from './Popover';
+import Switch from  './Switch';
+import Icons from './Icons';
 
 function App() {
  const[bgChange,setBgChange] = useState(false);
@@ -21,8 +23,8 @@ function App() {
   return (
  <div className={`${bgChange === false ? "dark" : "white"}`}>
 
+     <Switch mode={() => changeDark()} theme = {() => modeChange()} selectIcon = {<Icons/>}/>
 
-     <button onClick={() => changeDark()} className={"react-switch-handle"}>Dark Mode</button>
 
      <Modal name = { <Users/>}/>
 
