@@ -34,7 +34,7 @@ function Users (){
                         users.map((user)=> (
                             <li onClick={()=> getId(user.id)} >{user.username}
                                 {
-                                    <Popover index = {info.email}/>
+                                    <Popover index = {info.username}/>
 
                                 }
 

@@ -1,9 +1,10 @@
 import React from 'react';
 
 
-const Switch = (props) => {
+const Switch  = (props) => {
     return (
         <>
+        <div className={"switch-container"}>
             <input
                 className="react-switch-checkbox"
                 id={`react-switch-new`}
@@ -14,9 +15,10 @@ const Switch = (props) => {
                 htmlFor={`react-switch-new`}
                 onClick={props.mode}
                 onChange={props.theme}
-            ><i className="bi bi-moon-fill"></i>
+            >
                 <span className={`react-switch-button`}>{props.selectIcon}</span>
             </label>
+        </div>
         </>
     );
 };

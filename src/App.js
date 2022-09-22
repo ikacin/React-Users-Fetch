@@ -23,7 +23,7 @@ function App() {
   return (
  <div className={`${bgChange === false ? "dark" : "white"}`}>
 
-     <Switch mode={() => changeDark()} theme = {() => modeChange()} selectIcon = {<Icons/>}/>
+     <Switch mode={() => changeDark()} selectIcon = {<Icons/>}/>
 
 
      <Modal name = { <Users/>}/>

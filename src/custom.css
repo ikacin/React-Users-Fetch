@@ -89,3 +89,12 @@ span.material-icons-two-tone.notranslate.MuiIcon-root.MuiIcon-fontSizeMedium.css
     justify-content: center;
     width: 100%;
 }
+.switch-container {
+    position: fixed;
+    transform: translate(50%, 50%);
+    width: 100%;
+    padding: 0 -190px;
+    height: 100%;
+    margin: 20px -40px;
+    z-index: 9;
+}
